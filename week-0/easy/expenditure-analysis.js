@@ -12,3 +12,29 @@
 	}
   Output - [{ category: 'Food', totalSpent: 10 }] // Can have multiple categories, only one example is mentioned here
 */
+
+
+function calculateTotalSpentByCategory(transactions){
+
+  //creating a temp object to store unique food categories and their prices
+
+  let temp={};
+
+  transactions.forEach((transaction)=>{
+    if(temp[transaction["category"]]){
+      temp[transaction["category"]]+=transaction["price"];
+    }else{
+      temp[transaction["category"]]=transaction["price"];
+    }
+  });
+
+  //creating ans array and inserting unique categories and their expenditure
+
+  let ans=[];
+
+  for(let key in temp){
+    ans.push({'category':key,'totalSpent':temp[key]});
+  }
+
+  return ans;
+}
