@@ -5,4 +5,20 @@
   Once you've implemented the logic, test your code by running
 */
 
+function countVowels(str){
+  //creating a ascii vowel dictionary
 
+  let vowel=[97,101,105,111,117];
+  let cnt=0;
+
+  //creating uniform case
+  str=str.toLowerCase();
+
+  //iterating thriugh string to check for vowel
+  for(let i=0;i<str.length;i++){
+    if(vowel.includes(str[i].charCodeAt(0)))
+      cnt+=1;
+  }
+
+  return cnt;
+}
