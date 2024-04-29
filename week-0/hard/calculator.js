@@ -15,3 +15,65 @@
 
   Once you've implemented the logic, test your code by running
 */
+
+
+class Calculator{
+
+  constructor(){
+    this.result=0;
+  }
+
+  add(num){
+    if(typeof num==='number'){
+      this.result+=num;
+    }else{
+      throw new error("Invalid");
+    }
+  }
+
+  
+  subtract(num){
+    if(typeof num==='number'){
+      this.result-=num;
+    }else{
+      throw new error("Invalid");
+    }
+  }
+
+  
+  multiply(num){
+    if(typeof num==='number'){
+      this.result*=num;
+    }else{
+      throw new error("Invalid");
+    }
+  }
+
+  
+  divide(num){
+    if(typeof num==='number'&&num!==0){
+      this.result/=num;
+    }else{
+      throw new error("Invalid");
+    }
+  }
+
+  clear(){
+    this.result=0;
+  }
+
+  getResult(){
+    return this.result;
+  }
+
+  calculate(exp){
+    exp=exp.replace(/\s+/g, " ");
+    let ans=eval(exp);
+
+    if(ans===Infinity){
+      throw new error("Invalid");
+    }else{
+      this.result=ans;
+    }
+  }
+}
