@@ -1,0 +1,17 @@
+/*
+    Write a function that returns a promise that resolves after n seconds have passed, where n is passed as an argument to the function.
+*/
+
+
+
+function getBack(n){
+    return new Promise((res,err)=>{
+        setTimeout(()=>{
+            res("Resolved");
+        },n*1000)
+    })
+}
+
+getBack().then((res)=>{
+    console.log(res);
+})
